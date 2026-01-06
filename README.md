@@ -194,7 +194,8 @@ lets get a root shell now.
 
 firstly lets find out whether deku can run sudo on the system or not
 
-```sudo -l
+```bash
+sudo -l
 ```
 we get to know that deku can run the script /opt/NewComponent/feedback.sh as sudo. on viewing the script we find out that the script blocks some special characters like / or ( and stuff
 
