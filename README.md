@@ -39,7 +39,7 @@ reached a dead end after enumerating the /images directory. but i noticed someth
 ```bash
 ffuf -u "http://<target_ip>/assets/index.php?FUZZ=whoami" -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt -fs 0
 ```
-i wont recommend doing this since you have no idea about the parameter carrying out RCE beforehand. this seems bad practice. instead we will create a custom fuzzer and a word list which will put parameter pairs in the FUZZ placeholder!
+i wont recommend doing this since you have no idea about the parameter carrying out RCE beforehand. this seems bad practice. A beginner hacker should stick to generalized commands and payloads which will target major parameters and their respective values instead we will create a custom fuzzer and a word list which will put parameter pairs in the FUZZ placeholder!
 
 copy this wordlist and place it in a param_value_pairs.txt file
 
@@ -110,7 +110,7 @@ chmod +x parafuzzer.sh
 ./parafuzzer.sh
 ```
 
-so let me break this down for you. the script will put all the parameter-value pairs in the fuzz placeholder of the script which is the $param and the $value. so instead of carelessly assuming that the parameter is goinf to be the cmd parameter which will carry out RCE for us magically, we do a more professional enumeration and we find a match
+so let me break this down for you. the script will put all the parameter-value pairs in the fuzz placeholder of the script which is the $param and the $value. so instead of carelessly assuming that the parameter is going to be the cmd parameter which will carry out RCE for us magically, we do a more professional enumeration and we find a match
 
 the script output will lookl like this:
 
