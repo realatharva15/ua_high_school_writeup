@@ -2,7 +2,7 @@
 # Author: Atharva Bordavekar
 # Difficulty: Easy
 # Points: 60
-# Vulnerabilities:
+# Vulnerabilities: RCE through a vulnerable parameter, PrivEsc via command injection in a script run as sudo
 
 # Reconnaissance:
 
@@ -103,7 +103,7 @@ while IFS= read -r pair; do
 done < param_value_pairs.txt
 ```
 ```bash
-#now give the script the approporate permissions
+#now give the script the appropriate permissions
 chmod +x parafuzzer.sh
 
 #now run the script
